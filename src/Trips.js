@@ -35,17 +35,13 @@ class Trips extends React.Component {
       <Container>
         <Content>
           <Card>
-            <CardItem button onPress={ () => Actions.push("places")} >
-              <Body>
-                <Text>Trip placeholder</Text>
-              </Body>
+            <CardItem button onPress={ () => Actions.replace("places")} >
+              <Text>Trip placeholder</Text>
             </CardItem>
           </Card>
         </Content>
-
         <Fab
           active={true}
-          containerStyle={{ fontSize: 30, }}
           style={{ backgroundColor: '#FA6900' }}
           position="bottomLeft"
           onPress={() => this.toggleModal()}>
