@@ -6,17 +6,6 @@ class Profile extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button
-              transparent
-              dark
-              onPress={ () => Actions.pop() }
-            >
-              <Icon name="arrow-back" />
-            </Button>
-          </Left>
-        </Header>
         <Content>
           <Text>Profile page</Text>
         </Content>
