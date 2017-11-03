@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Router, Scene, Tabs, Drawer } from 'react-native-router-flux';
+import { StyleSheet } from 'react-native';
+import { Router, Scene, Tabs, Drawer, Modal } from 'react-native-router-flux';
 import { Icon } from 'native-base';
 import Trips from './src/Trips';
 import Places from './src/Places';
@@ -14,46 +14,47 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-      <Scene key="root" hideNavBar>
-        <Drawer
-          key="sidebar"
-          contentComponent={Sidebar}
-          drawerIcon={<Icon name="ios-menu" />}
-          drawerWidth={180}
-        >
-          <Tabs>
-            <Scene
-              key="trips"
-              component={Trips}
-              title="My Trips"
-            />
-            <Scene
-              key="places"
-              component={Places}
-              title="TripNamePlaceholder"
-            />
-            <Scene
-              key="chat"
-              component={Chat}
-              title="TripNamePlaceholder"
-            />
-            <Scene
-              key="buddies"
-              component={Buddies}
-              title="TripNamePlaceholder"
-            />
-            <Scene
-              key="expenses"
-              component={Expenses}
-              title="TripNamePlaceholder"
-            />
-          </Tabs>
-        </Drawer>
-        <Scene
-          key="profile"
-          component={Profile}
-          title="UserNamePlaceholder"
-        />
+        <Scene key="root" title="TripNamePlaceholder">
+          <Drawer
+            key="sidebar"
+            contentComponent={Sidebar}
+            drawerIcon={<Icon name="ios-menu" />}
+            drawerWidth={180}
+          >
+            <Tabs
+              swipeEnabled
+              wrap={false}
+            >
+              <Scene
+                key="places"
+                component={Places}
+                panHandlers={null}
+              />
+              <Scene
+                key="chat"
+                component={Chat}
+              />
+              <Scene
+                key="buddies"
+                component={Buddies}
+              />
+              <Scene
+                key="expenses"
+                component={Expenses}
+              />
+            </Tabs>
+          </Drawer>
+          <Scene
+            key="trips"
+            component={Trips}
+            title="My Trips"
+            panHandlers={null}
+          />
+          <Scene
+            key="profile"
+            component={Profile}
+            title="UserNamePlaceholder"
+          />
         </Scene>
       </Router>
     );
