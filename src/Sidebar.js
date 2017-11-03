@@ -6,17 +6,25 @@ class Sidebar extends React.Component {
   render() {
     return (
       <Container>
-      <Header/>
-      <Content>
-        <Button
-          transparent
-          dark
-          onPress={ () => Actions.push("profile")}
-        >
-          <Icon name="person" />
-          <Text>Profile</Text>
-        </Button>
-      </Content>
+        <Content>
+          <Button
+            transparent
+            dark
+            onPress={ () => Actions.push("trips")}
+          >
+            <Icon name="map" />
+            <Text>Trips</Text>
+          </Button>
+
+          <Button
+            transparent
+            dark
+            onPress={ () => Actions.push("profile")}
+          >
+            <Icon name="person" />
+            <Text>Profile</Text>
+          </Button>
+        </Content>
       </Container>
     );
   }
