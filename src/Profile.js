@@ -1,23 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Container, Header, Left, Content, Button, Text, Icon } from 'native-base';
+import { Actions } from 'react-native-router-flux';
 
 class Profile extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Profile page</Text>
-      </View>
+      <Container>
+        <Header>
+          <Left>
+            <Button
+              transparent
+              dark
+              onPress={ () => Actions.pop() }
+            >
+              <Icon name="arrow-back" />
+            </Button>
+          </Left>
+        </Header>
+        <Content>
+          <Text>Profile page</Text>
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default Profile;
