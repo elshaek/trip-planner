@@ -7,19 +7,21 @@ import Places from './src/Places';
 import Chat from './src/Chat';
 import Buddies from './src/Buddies';
 import Expenses from './src/Expenses';
+import Sidebar from './src/Sidebar';
 import Profile from './src/Profile';
 
 export default class App extends React.Component {
   render() {
     return (
       <Router>
+      <Scene key="root" hideNavBar>
         <Drawer
-          key="profile"
-          contentComponent={Profile}
+          key="sidebar"
+          contentComponent={Sidebar}
           drawerIcon={<Icon name="ios-menu" />}
           drawerWidth={180}
         >
-          <Tabs key="root">
+          <Tabs>
             <Scene
               key="trips"
               component={Trips}
@@ -47,6 +49,12 @@ export default class App extends React.Component {
             />
           </Tabs>
         </Drawer>
+        <Scene
+          key="profile"
+          component={Profile}
+          title="UserNamePlaceholder"
+        />
+        </Scene>
       </Router>
     );
   }
