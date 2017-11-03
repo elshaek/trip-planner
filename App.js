@@ -9,8 +9,6 @@ import Buddies from './src/Buddies';
 import Expenses from './src/Expenses';
 import Sidebar from './src/components/Sidebar';
 import Profile from './src/Profile';
-import TabIcon from './src/components/TabIcon'
-
 
 export default class App extends React.Component {
   render() {
@@ -27,31 +25,34 @@ export default class App extends React.Component {
               swipeEnabled
               wrap={false}
               showLabel={false}
+              activeTintColor= 'orange'
+              activeBackgroundColor= 'blue'
+              inactiveBackgroundColor= 'red'
             >
               <Scene
                 key="places"
                 component={Places}
                 panHandlers={null}
-                iconName="pin"
-                icon={TabIcon}
+                icon={Icon}
+                name="pin"
               />
               <Scene
                 key="chat"
                 component={Chat}
-                iconName="chatbubbles"
-                icon={TabIcon}
+                icon={Icon}
+                name="chatbubbles"
               />
               <Scene
                 key="buddies"
                 component={Buddies}
-                iconName="people"
-                icon={TabIcon}
+                icon={Icon}
+                name="people"
               />
               <Scene
                 key="expenses"
                 component={Expenses}
-                iconName="cash"
-                icon={TabIcon}
+                icon={Icon}
+                name="cash"
               />
             </Tabs>
           </Drawer>
