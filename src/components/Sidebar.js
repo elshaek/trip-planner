@@ -6,6 +6,7 @@ class Sidebar extends React.Component {
   render() {
     return (
       <Container>
+        <Header />
         <Content>
           <Button
             transparent
