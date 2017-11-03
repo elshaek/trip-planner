@@ -52,7 +52,6 @@ class Trips extends React.Component {
           animationType="slide"
           transparent={true}
           visible={this.state.showTripModal}
-          onRequestClose={() => {alert("Modal has been closed.")}}
         >
           <View style={{marginTop: 22,
                         flex: 1,
