@@ -7,7 +7,7 @@ import Places from './src/Places';
 import Chat from './src/Chat';
 import Buddies from './src/Buddies';
 import Expenses from './src/Expenses';
-import Sidebar from './src/Sidebar';
+import Sidebar from './src/components/Sidebar';
 import Profile from './src/Profile';
 import TabIcon from './src/components/TabIcon'
 
